@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>წიგნის დამატება</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <!-- Flash შეტყობინებები -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white text-center">
+                    <h4>ახალი წიგნის დამატება</h4>
+                </div>
+                <div class="card-body">
+                    <!-- ფორმა აგზავნის მონაცემებს /book მისამართზე -->
+                    <form action="{{ url_for('book') }}" method="POST">
+                        <div class="mb-3">
+                            <label for="title" class="form-label">სათაური (Title) *</label>
+                            <input type="text" class="form-control" id="title" name="title" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="author" class="form-label">ავტორი (Author) *</label>
+                            <input type="text" class="form-control" id="author" name="author" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="year" class="form-label">გამოცემის წელი (Year) *</label>
+                            <input type="number" class="form-control" id="year" name="year" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">დამატება</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
