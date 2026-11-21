@@ -1,4 +1,4 @@
-1.
+# Task 1
 class Vector:
     def __init__(self, x, y):
         self.x = x
@@ -10,7 +10,7 @@ class Vector:
     def __str__(self):
         return f"({self.x}, {self.y})"
     
-    2.
+ # Task 2
     class Book:
     def __init__(self, title, author):
         self.title = title
@@ -19,7 +19,7 @@ class Vector:
     def __eq__(self, other):
         return self.title == other.title and self.author == other.author
     
-    3.
+# Task 3
 class Car:
     def __new__(cls, *args, **kwargs):
         instance = super().__new__(cls)
