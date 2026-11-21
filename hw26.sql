@@ -16,22 +16,22 @@ CREATE TABLE Books (
 
 -- 3
 INSERT INTO Authors (AuthorID, FirstName, LastName) VALUES
-(1, 'Gia', 'Natsvlishvili'),
-(2, 'Shota', 'Rustaveli'),
-(3, 'Saba', 'Orbeliani'),
-(4, 'Ilia', 'Chavchavadze'),
-(5, 'Akaki', 'Tsereteli');
+(1, 'Galaktion', 'Tabidze'),
+(2, 'William', 'Shakespeare'),
+(3, 'Fyodor', 'Dostoevsky'),
+(4, 'Victor', 'Hugo'),
+(5, 'George', 'Orwell');
 
 INSERT INTO Books (BookID, Title, PublishedYear, AuthorID) VALUES
-(101, 'Python Basics', 2023, 1),
-(102, 'The Knight in the Panther Skin', 1200, 2),
-(103, 'Fables', 1700, 3),
-(104, 'Letters of a Traveler', 1861, 4),
-(105, 'Bashi-Achuki', 1895, 5);
+(101, 'The Moon of Mtatsminda', 1915, 1),
+(102, 'Sonnets', 1609, 2),
+(103, 'The Gambler', 1866, 3),
+(104, 'The Hunchback of Notre-Dame', 1831, 4),
+(105, '1984', 1949, 5);
 
 -- 4
 UPDATE Books
-SET PublishedYear = 2024
+SET PublishedYear = 1916
 WHERE BookID = 101;
 
 -- 5
